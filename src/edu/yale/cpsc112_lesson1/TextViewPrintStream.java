@@ -16,6 +16,12 @@ public class TextViewPrintStream extends PrintStream {
 		this.textView = new TextView(context);
 		context.setContentView(textView);
 	}
+	
+	public TextViewPrintStream(Activity context, TextView t)
+	{
+		super(out);
+		this.textView = t;
+	}
 
 	public synchronized void print(String str) {
 		super.print(str);

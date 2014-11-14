@@ -2,18 +2,43 @@ package edu.yale.cpsc112_lesson1;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.view.KeyEvent;
+import android.widget.TextView.OnEditorActionListener;
 
 public class MainActivity extends Activity {
+	
+	public static String ingredient = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        System.setOut(new TextViewPrintStream(this));
+        setContentView(R.layout.activity_main);
+        TextView out = (TextView) findViewById(R.id.textOut);
+        out.setMovementMethod(new ScrollingMovementMethod());
+        System.setOut(new TextViewPrintStream(this, out));
+        EditText editText = (EditText) findViewById(R.id.textIn);
+        editText.setOnEditorActionListener(new OnEditorActionListener(){
+        	@Override
+        	public boolean onEditorAction(TextView v, int actionId, KeyEvent event)
+        	{
+        		boolean handled = false;
+        		if (actionId == EditorInfo.IME_ACTION_DONE)
+        		{
+        			ingredient = v.getText().toString();
+        			v.setText("");
+        			System.out.println(ingredient); //just to check f it worked
+        			handled = true;
+        		}
+        		return handled;
+        	}
+        });
         
-        // Write your code here
     }
 
 

@@ -9,8 +9,25 @@
     tools:context="edu.yale.cpsc112_lesson1.MainActivity" >
 
     <TextView
+        android:id="@+id/textOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:text="@string/welcome" />
+
+    <EditText
+        android:id="@+id/textIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="46dp"
+        android:layout_marginLeft="15dp"
+        android:ems="10" 
+        android:hint="Enter an ingredient"
+        android:imeOptions="actionDone"
+        android:inputType="textAutoCorrect">
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

@@ -82,7 +82,6 @@ public class MainActivity extends Activity {
         
     }
 	//need to convert each ingredient to a number which will all be put into a string ownedIngredients^?
-	int commonIngredients=0;
 
 //	public static int commonIngredientList ()
 //	{
@@ -99,15 +98,26 @@ public class MainActivity extends Activity {
 //		}
 //	}
         
-    public static String()
-    {
-    	for (int i=0; i>=3 /*length of array*/ ; i++)
-    	{
-    		//array[i]
-    		//for (index = s.indexOf(','
-    	}
-    }
     
+    		/*
+    		String s = array[i];
+    		if (s.substring('- ', ',')=ingredient)
+    		{
+    			commonIngredients++;
+    		}
+    		
+    		
+    		for (index = s.indexOf('\n'); index != -1; index = s.indexOf('\n'))
+    		{
+    			
+    		
+//		   reversed = line + reversed;
+//		   s = s.substring(index + 1);
+    			if 
+    		}
+    		for (index = s.indexOf(','  
+    		*/
+    		
 //    public static boolean[] checkRow(int[] row, int pos)
 //    {
 //       boolean[] returnVals = new boolean[row.length];
@@ -122,15 +132,25 @@ public class MainActivity extends Activity {
 //    public static String reverse_lines(String snake)
 //	{
 //    
-//	String s= snake;
-//	
-//	int index;
-//	String line;
-//	String reversed="";
-//	for (index = s.indexOf('\n'); index != -1; index = s.indexOf('\n'))
-//	   {
-//		   line = s.substring(0,index+1);
-//		   reversed = line + reversed;
+	
+
+    int index;
+	String line;
+	int commonIngredients=0;
+    public static String()
+    {
+    	for (int i=0; i>=3 /*length of array*/ ; i++)
+    	{
+    		String s = array[i];
+    		for (index = s.indexOf(', '); index != -1; index = s.indexOf('\n'))
+    		{
+    			item = s.substring(0,index);
+    			s = s.substring(index, s.length());
+    			commonIngredients++;
+    		}
+    	}
+
+    //reversed = line + reversed;
 //		   s = s.substring(index + 1);
 //	   }
 //	return reversed;

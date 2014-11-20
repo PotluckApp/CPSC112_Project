@@ -14,6 +14,7 @@ import android.widget.TextView.OnEditorActionListener;
 public class MainActivity extends Activity {
 	
 	public static String ingredient = "";
+	public static String ownedIngredients="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,26 @@ public class MainActivity extends Activity {
         		return handled;
         	}
         });
+        
+        
+    }
+	//need to convert each ingredient to a number which will all be put into a string ownedIngredients^?
+	int commonIngredients=0;
+
+	public static int commonIngredientList ()
+	{
+		for (int i=0; i>=charAt(ownedIngredients.length()+1)
+		{
+			for (int j=0; i>=charAt(recipeOneIngredients.length+1)
+			{
+				if (ownedIngredients.charAt(i)==recipeOneIngredients.charAt(j))
+				{
+					commonIngredients+1
+				}
+			}
+
+		}
+	}
         
     }
 

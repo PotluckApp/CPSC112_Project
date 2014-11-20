@@ -101,6 +101,7 @@ public class MainActivity extends Activity {
         
     }
 
+//commonIngredients / numberOfIngredients > .75
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -84,22 +84,60 @@ public class MainActivity extends Activity {
 	//need to convert each ingredient to a number which will all be put into a string ownedIngredients^?
 	int commonIngredients=0;
 
-	public static int commonIngredientList ()
-	{
-		for (int i=0; i>=charAt(ownedIngredients.length()+1)
-		{
-			for (int j=0; i>=charAt(recipeOneIngredients.length+1)
-			{
-				if (ownedIngredients.charAt(i)==recipeOneIngredients.charAt(j))
-				{
-					commonIngredients+1
-				}
-			}
-
-		}
-	}
+//	public static int commonIngredientList ()
+//	{
+//		for (int i=0; i>=charAt(ownedIngredients.length()+1)
+//		{
+//			for (int j=0; i>=charAt(recipeOneIngredients.length+1)
+//			{
+//				if (ownedIngredients.charAt(i)==recipeOneIngredients.charAt(j))
+//				{
+//					commonIngredients+1
+//				}
+//			}
+//
+//		}
+//	}
         
+    public static String()
+    {
+    	for (int i=0; i>=3 /*length of array*/ ; i++)
+    	{
+    		//array[i]
+    		//for (index = s.indexOf(','
+    	}
     }
+    
+//    public static boolean[] checkRow(int[] row, int pos)
+//    {
+//       boolean[] returnVals = new boolean[row.length];
+//       for (int i = 0; i < row.length; i++) {
+//          if (row[i] == row[pos] && i !=pos) {
+//             returnVals[i] = true;
+//          }
+//       }
+//       return returnVals;
+//    }
+    
+//    public static String reverse_lines(String snake)
+//	{
+//    
+//	String s= snake;
+//	
+//	int index;
+//	String line;
+//	String reversed="";
+//	for (index = s.indexOf('\n'); index != -1; index = s.indexOf('\n'))
+//	   {
+//		   line = s.substring(0,index+1);
+//		   reversed = line + reversed;
+//		   s = s.substring(index + 1);
+//	   }
+//	return reversed;
+//	
+//	}
+
+
 
 //commonIngredients / numberOfIngredients > .75
 

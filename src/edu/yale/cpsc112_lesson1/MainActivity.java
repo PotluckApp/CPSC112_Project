@@ -1,6 +1,7 @@
 package edu.yale.cpsc112_lesson1;
 
 import android.app.Activity;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
@@ -15,45 +16,11 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class MainActivity extends Activity {
-	private String path;
-	
-	public void ReadFile(String file_path){
-		path = file_path;
-	}
-		
-	public String[] OpenFile() throws IOException{
-		FileReader fr = new FileReader(path);
-		BufferedReader textReader = new BufferedReader(fr);
-		
-		int numberOfLines = readLines();
-		String[ ] textData = new String[numberOfLines];
-		
-		for (int i=0; i < numberOfLines; i++) {
-			textData[ i ] = textReader.readLine();
-			}
-		
-		textReader.close( );
-		return textData;
-		
-	}
-
-	int readLines() throws IOException{
-		FileReader file_to_read = new FileReader(path);
-		BufferedReader bf = new BufferedReader(file_to_read);
-		
-		String aLine;
-		int numberOfLines =0;
-		
-		while ((aLine = bf.readLine()) != null) {
-			numberOfLines++;
-		}
-		bf.close();
-		return numberOfLines;
-	}
 	
 	
 	public static String ingredient = "";
-	public static String ownedIngredients="";
+	public static int commonIngredients;
+	public static int index;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,33 +39,49 @@ public class MainActivity extends Activity {
         		{
         			ingredient = v.getText().toString();
         			v.setText("");
-        			System.out.println(ingredient); //just to check f it worked
+        		//	System.out.println(ingredient); //just to check if it worked
+        			matchIngredients(ingredient);
+        		//	matchIngredients(ingredient);
         			handled = true;
         		}
         		return handled;
         	}
-        });
-        
-        
+        });  
     }
-	//need to convert each ingredient to a number which will all be put into a string ownedIngredients^?
-	int commonIngredients=0;
 
-	public static int commonIngredientList ()
-	{
-		for (int i=0; i>=charAt(ownedIngredients.length()+1)
-		{
-			for (int j=0; i>=charAt(recipeOneIngredients.length+1)
-			{
-				if (ownedIngredients.charAt(i)==recipeOneIngredients.charAt(j))
-				{
-					commonIngredients+1
-				}
-			}
-
-		}
-	}
-        
+    public String[] getRecipes()
+    {
+    	Resources res = getResources();
+    	String[] recipes = res.getStringArray(R.array.recipes);
+    	return recipes; 
+    }
+    
+    //need to convert each ingredient to a number which will all be put into a string ownedIngredients^?
+    public String matchIngredients(String input)
+    {
+    	String end = "No match";
+    	for (int i=0; i<=3; i++)
+    	{
+    		String wholeRecipe = getRecipes()[i];
+    		int commas = 0;
+    		for (int n = 0; wholeRecipe.indexOf(", ") != -1; n++)
+    		{
+    			commas++;
+    			wholeRecipe = wholeRecipe.substring(wholeRecipe.indexOf(", ") + 2);
+    		}
+    		wholeRecipe = getRecipes()[i];
+    		for (int j = 0; j < commas; j++)
+    		{
+    			String item = wholeRecipe.substring(0, wholeRecipe.indexOf(", "));
+    			if (item.equals(ingredient))
+    			{
+    				end = getRecipes()[i];
+    				System.out.println(end.substring(0, end.length()-1));
+    			}
+    			wholeRecipe = wholeRecipe.substring(wholeRecipe.indexOf(", ") + 2);
+    		}
+    	}
+    	return end;
     }
 
 //commonIngredients / numberOfIngredients > .75

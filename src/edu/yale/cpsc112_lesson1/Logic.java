@@ -24,7 +24,6 @@ public class Logic {
 
 			for ( int i=0; i < arrayLines.length; i++ ) {
 				System.out.println( arrayLines[ i ] ) ;
-				return arrayLines[i];
 				//can get rid of this part
 			}
 			//arrayLines = the text file that contains all of the lines in the recipes file

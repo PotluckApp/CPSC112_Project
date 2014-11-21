@@ -15,41 +15,11 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class MainActivity extends Activity {
-	private String path;
-	
-	public void ReadFile(String file_path){
-		path = file_path;
-	}
-		//test
-	public String[] OpenFile() throws IOException{
-		FileReader fr = new FileReader(path);
-		BufferedReader textReader = new BufferedReader(fr);
-		
-		int numberOfLines = readLines();
-		String[ ] textData = new String[numberOfLines];
-		
-		for (int i=0; i < numberOfLines; i++) {
-			textData[ i ] = textReader.readLine();
-			}
-		
-		textReader.close( );
-		return textData;
-		
-	}
 
-	int readLines() throws IOException{
-		FileReader file_to_read = new FileReader(path);
-		BufferedReader bf = new BufferedReader(file_to_read);
-		
-		String aLine;
-		int numberOfLines =0;
-		
-		while ((aLine = bf.readLine()) != null) {
-			numberOfLines++;
-		}
-		bf.close();
-		return numberOfLines;
-	}
+		//test
+
+
+
 	
 	
 	public static String ingredient = "";
@@ -132,6 +102,8 @@ public class MainActivity extends Activity {
 //    public static String reverse_lines(String snake)
 //	{
 //    
+    
+    /*
 	
 
     int index;
@@ -139,7 +111,7 @@ public class MainActivity extends Activity {
 	int commonIngredients=0;
     public static String()
     {
-    	for (int i=0; i>=3 /*length of array*/ ; i++)
+    	for (int i=0; i>=3 ; i++)
     	{
     		String s = array[i];
     		for (index = s.indexOf(', '); index != -1; index = s.indexOf('\n'))
@@ -148,7 +120,7 @@ public class MainActivity extends Activity {
     			s = s.substring(index, s.length());
     			commonIngredients++;
     		}
-    	}
+    	}*/
 
     //reversed = line + reversed;
 //		   s = s.substring(index + 1);

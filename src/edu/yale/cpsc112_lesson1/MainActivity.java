@@ -16,14 +16,6 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class MainActivity extends Activity {
-<<<<<<< HEAD
-=======
-
-		//test
-
-
-
->>>>>>> 2a2fb16ad4f921e6024b99d71e93db78605cac61
 	
 	
 	public static String ingredient = "";
@@ -56,7 +48,6 @@ public class MainActivity extends Activity {
         	}
         });  
     }
-<<<<<<< HEAD
 
     public String[] getRecipes()
     {
@@ -92,8 +83,9 @@ public class MainActivity extends Activity {
     	}
     	return end;
     }
-=======
-	//need to convert each ingredient to a number which will all be put into a string ownedIngredients^?
+
+    
+    //need to convert each ingredient to a number which will all be put into a string ownedIngredients^?
 
 //	public static int commonIngredientList ()
 //	{
@@ -172,7 +164,6 @@ public class MainActivity extends Activity {
 //	}
 
 
->>>>>>> 2a2fb16ad4f921e6024b99d71e93db78605cac61
 
 //commonIngredients / numberOfIngredients > .75
 

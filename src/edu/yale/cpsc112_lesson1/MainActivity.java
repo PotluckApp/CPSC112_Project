@@ -16,6 +16,14 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class MainActivity extends Activity {
+<<<<<<< HEAD
+=======
+
+		//test
+
+
+
+>>>>>>> 2a2fb16ad4f921e6024b99d71e93db78605cac61
 	
 	
 	public static String ingredient = "";
@@ -48,6 +56,7 @@ public class MainActivity extends Activity {
         	}
         });  
     }
+<<<<<<< HEAD
 
     public String[] getRecipes()
     {
@@ -83,6 +92,87 @@ public class MainActivity extends Activity {
     	}
     	return end;
     }
+=======
+	//need to convert each ingredient to a number which will all be put into a string ownedIngredients^?
+
+//	public static int commonIngredientList ()
+//	{
+//		for (int i=0; i>=charAt(ownedIngredients.length()+1)
+//		{
+//			for (int j=0; i>=charAt(recipeOneIngredients.length+1)
+//			{
+//				if (ownedIngredients.charAt(i)==recipeOneIngredients.charAt(j))
+//				{
+//					commonIngredients+1
+//				}
+//			}
+//
+//		}
+//	}
+        
+    
+    		/*
+    		String s = array[i];
+    		if (s.substring('- ', ',')=ingredient)
+    		{
+    			commonIngredients++;
+    		}
+    		
+    		
+    		for (index = s.indexOf('\n'); index != -1; index = s.indexOf('\n'))
+    		{
+    			
+    		
+//		   reversed = line + reversed;
+//		   s = s.substring(index + 1);
+    			if 
+    		}
+    		for (index = s.indexOf(','  
+    		*/
+    		
+//    public static boolean[] checkRow(int[] row, int pos)
+//    {
+//       boolean[] returnVals = new boolean[row.length];
+//       for (int i = 0; i < row.length; i++) {
+//          if (row[i] == row[pos] && i !=pos) {
+//             returnVals[i] = true;
+//          }
+//       }
+//       return returnVals;
+//    }
+    
+//    public static String reverse_lines(String snake)
+//	{
+//    
+    
+    /*
+	
+
+    int index;
+	String line;
+	int commonIngredients=0;
+    public static String()
+    {
+    	for (int i=0; i>=3 ; i++)
+    	{
+    		String s = array[i];
+    		for (index = s.indexOf(', '); index != -1; index = s.indexOf('\n'))
+    		{
+    			item = s.substring(0,index);
+    			s = s.substring(index, s.length());
+    			commonIngredients++;
+    		}
+    	}*/
+
+    //reversed = line + reversed;
+//		   s = s.substring(index + 1);
+//	   }
+//	return reversed;
+//	
+//	}
+
+
+>>>>>>> 2a2fb16ad4f921e6024b99d71e93db78605cac61
 
 //commonIngredients / numberOfIngredients > .75
 

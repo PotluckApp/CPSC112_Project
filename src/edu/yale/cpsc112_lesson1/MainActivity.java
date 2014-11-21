@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
 	public void ReadFile(String file_path){
 		path = file_path;
 	}
-		
+		//test
 	public String[] OpenFile() throws IOException{
 		FileReader fr = new FileReader(path);
 		BufferedReader textReader = new BufferedReader(fr);

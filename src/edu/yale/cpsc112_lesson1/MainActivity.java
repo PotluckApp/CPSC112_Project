@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
 	public static String ingredient = "";
 	public static int commonIngredients;
 	public static int index;
+	public static String end = "No matches!";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +40,14 @@ public class MainActivity extends Activity {
         		{
         			ingredient = v.getText().toString();
         			v.setText("");
+        			end = "No matches!";
         		//	System.out.println(ingredient); //just to check if it worked
         			matchIngredients(ingredient);
         		//	matchIngredients(ingredient);
+        			if (end.equals("No matches!"))
+        			{
+        				System.out.println(end);
+        			}
         			handled = true;
         		}
         		return handled;
@@ -59,7 +65,7 @@ public class MainActivity extends Activity {
     //need to convert each ingredient to a number which will all be put into a string ownedIngredients^?
     public String matchIngredients(String input)
     {
-    	String end = "No match";
+   // 	String end = "No match";
     	for (int i=0; i<=3; i++)
     	{
     		String wholeRecipe = getRecipes()[i];

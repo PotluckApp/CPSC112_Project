@@ -62,7 +62,6 @@ public class MainActivity extends Activity {
     	return recipes; 
     }
     
-    //need to convert each ingredient to a number which will all be put into a string ownedIngredients^?
     public String matchIngredients(String input)
     {
    // 	String end = "No match";
@@ -79,6 +78,9 @@ public class MainActivity extends Activity {
     		for (int j = 0; j < commas; j++)
     		{
     			String item = wholeRecipe.substring(0, wholeRecipe.indexOf(", "));
+    			/*for (k=0, k<=NUMBER OF INGREDIENTS INPUTED; k++) 
+    			 *{if (item.equals(ownedIngredients[k])
+    			 */
     			if (item.equals(ingredient))
     			{
     				end = getRecipes()[i];

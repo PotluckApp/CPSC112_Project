@@ -62,9 +62,31 @@ public class MainActivity extends Activity {
     	return recipes; 
     }
     
+    /*
+    public String[] listOfOwnedIngredients(String INGREDIENTSLIST)
+    {
+    		String INGREDIENTSLIST = ownedIngredients()[];
+    		int commas = 0;
+    		for (int n = 0; INGREDIENTSLIST.indexOf(", ") != -1; n++)
+    		{
+    			commas++;
+    			INGREDIENTSLIST = INGREDIENTSLIST.substring(INGREDIENTSLIST.indexOf(", ") + 2);
+    		}
+    		INGREDIENTSLIST = ownedIngredients()[];
+    		for (int j = 0; j < commas; j++)
+    		{
+    			String item = INGREDIENTSLIST.substring(0, INGREDIENTSLIST.indexOf(", "));
+    			ownedIngredients[j] = new String item  			 
+    		}
+    		INGREDIENTSLIST = INGREDIENTSLIST.substring(INGREDIENTSLIST.indexOf(", ") + 2);
+    }
+    	*/
+    	
     public String matchIngredients(String input)
     {
    // 	String end = "No match";
+    	
+    	//NEED TO REPLACE 3 WITH NUMBER OF RECIPES IN ARRAY*****
     	for (int i=0; i<=3; i++)
     	{
     		String wholeRecipe = getRecipes()[i];
@@ -78,9 +100,23 @@ public class MainActivity extends Activity {
     		for (int j = 0; j < commas; j++)
     		{
     			String item = wholeRecipe.substring(0, wholeRecipe.indexOf(", "));
-    			/*for (k=0, k<=NUMBER OF INGREDIENTS INPUTED; k++) 
-    			 *{if (item.equals(ownedIngredients[k])
-    			 */
+    			
+    			/*
+    			for (k=0, k<=NUMBER OF INGREDIENTS INPUTED; k++) 
+    			{
+    				if (item.equals(ownedIngredients[k])
+    				{
+    					commonIngredients++;
+    				}
+    			}
+    			if (commonIngredients / NUMBER OF INGREDIENTS >= .75)
+    			{
+    				end = getRecipes()[i];
+    				System.out.println(end.substring(0, end.length()-1));
+    			}
+    			wholeRecipe = wholeRecipe.substring(wholeRecipe.indexOf(", ") + 2);
+    			*/
+    			 
     			if (item.equals(ingredient))
     			{
     				end = getRecipes()[i];
@@ -93,8 +129,6 @@ public class MainActivity extends Activity {
     }
 
 
-
-//commonIngredients / numberOfIngredients > .75
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

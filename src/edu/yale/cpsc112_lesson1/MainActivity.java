@@ -18,12 +18,12 @@ import java.io.IOException;
 public class MainActivity extends Activity {
 	
 	
-	public static String INGREDIENTSLIST = "";
+//	public static String INGREDIENTSLIST = "";
 	public static int commonIngredients;
 	public static int index;
 	public static String end = "No matches!";
-	public static int commas = 0;
-	public static String[]ownedIngredients = new String[commas];
+//	public static int commas = 0;
+//	public static String[]ownedIngredients = new String[commas];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +40,13 @@ public class MainActivity extends Activity {
         		boolean handled = false;
         		if (actionId == EditorInfo.IME_ACTION_DONE)
         		{
+        			String INGREDIENTSLIST = new String("");
         			INGREDIENTSLIST = v.getText().toString();
         			v.setText("");
         			end = "No matches!";
         			matchIngredients(listOfOwnedIngredients(INGREDIENTSLIST));
+        	//		System.out.println(INGREDIENTSLIST);
+        	//		System.out.println(listOfOwnedIngredients(INGREDIENTSLIST)[0]);
         			if (end.equals("No matches!"))
         			{
         				System.out.println(end);
@@ -63,24 +66,22 @@ public class MainActivity extends Activity {
     }
     
     
-    public String[] listOfOwnedIngredients(String INGREDIENTSLIST)
+    public String[] listOfOwnedIngredients(String input)
     {
-    //		INGREDIENTSLIST = ownedIngredients()[];
-    	//	int commas = 0;
-    		String temporaryList1 = INGREDIENTSLIST;
-    		for (int n = 0; temporaryList1.indexOf(", ") != -1; n++)
+    		int commas = 0;
+    		for (int n = 0; n < input.length(); n++)
     		{
-    			commas++;
-    			temporaryList1 = temporaryList1.substring(temporaryList1.indexOf(", ") + 1);
+    			if (input.charAt(n) == ',')
+    			{
+    				commas++;
+    			}
     		}
-    	//	String[] ownedIngredients = new String[commas];
-    	//	INGREDIENTSLIST = ownedIngredients()[];
-    		String temporaryList2 = INGREDIENTSLIST;
+    		String[] ownedIngredients = new String[commas + 1];
     		for (int j = 0; j < commas; j++)
     		{
-    			String item = temporaryList2.substring(0, temporaryList2.indexOf(", "));
+    			String item = input.substring(0, input.indexOf(", "));
     			ownedIngredients[j] = item;
-    			temporaryList2 = temporaryList2.substring(temporaryList2.indexOf(", ") + 2);
+    			input = input.substring(input.indexOf(", ") + 2);
     		}
     		return ownedIngredients;
     }
@@ -108,7 +109,7 @@ public class MainActivity extends Activity {
     			
     			for (int k=0; k<= 3; k++) 
     			{
-    				if (item.equals(ownedIngredients[k]))
+    				if (item.equals(input[k]))
     				{
     					commonIngredients++;
     				}

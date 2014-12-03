@@ -107,7 +107,7 @@ public class MainActivity extends Activity {
     		String[] storedRecipe = listOfOwnedIngredients(getRecipes()[n]);
     		if (storedRecipe.length < input.length)
     		{
-    			for (int k = 0; k < storedRecipe.length; k++)
+    			for (int k = 0; k < storedRecipe.length - 1; k++)
     			{
     				if (storedRecipe[k].equals(input[k]))
     						{
@@ -121,7 +121,7 @@ public class MainActivity extends Activity {
     		}
     		else
     		{
-    			for (int k = 0; k < input.length; k++)
+    			for (int k = 0; k < input.length - 1; k++)
     			{
     				if (storedRecipe[k].equals(input[k]))
     						{

@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
 //	public static String INGREDIENTSLIST = "";
 	public static int commonIngredients;
 	public static int index;
-	public static String[] end = {"No matches!"};
+	public static String end = "No matches!";
 //	public static int commas = 0;
 //	public static String[]ownedIngredients = new String[commas];
 
@@ -86,7 +86,7 @@ public class MainActivity extends Activity {
     		return ownedIngredients;
     }
     
-    public String[] matchIngredients(String[] input)
+    public String matchIngredients(String[] input)
     {
    // 	String end = "No match";
     	
@@ -115,7 +115,7 @@ public class MainActivity extends Activity {
     						}
     				if (commonIngredients / storedRecipe.length >= 0.5)
     				{
-    					end = storedRecipe;
+    					end = storedRecipe[storedRecipe.length - 1];
     				}
     			}
     		}
@@ -129,7 +129,7 @@ public class MainActivity extends Activity {
     						} 
     				if (commonIngredients / storedRecipe.length >= 0.5)
     				{
-    					end = storedRecipe;
+    					end = storedRecipe[storedRecipe.length - 1];
     				}
     			}
     		}

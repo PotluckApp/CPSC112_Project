@@ -22,6 +22,8 @@ public class MainActivity extends Activity {
 	public static int commonIngredients;
 	public static int index;
 	public static String end = "No matches!";
+	public static int commas = 0;
+	public static String[]ownedIngredients = new String[commas];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,7 @@ public class MainActivity extends Activity {
         			INGREDIENTSLIST = v.getText().toString();
         			v.setText("");
         			end = "No matches!";
-        			matchIngredients(INGREDIENTSLIST);
+        			matchIngredients(listOfOwnedIngredients(INGREDIENTSLIST));
         			if (end.equals("No matches!"))
         			{
         				System.out.println(end);
@@ -64,13 +66,13 @@ public class MainActivity extends Activity {
     public String[] listOfOwnedIngredients(String INGREDIENTSLIST)
     {
     //		INGREDIENTSLIST = ownedIngredients()[];
-    		int commas = 0;
+    	//	int commas = 0;
     		for (int n = 0; INGREDIENTSLIST.indexOf(", ") != -1; n++)
     		{
     			commas++;
     			INGREDIENTSLIST = INGREDIENTSLIST.substring(INGREDIENTSLIST.indexOf(", ") + 2);
     		}
-    		String[] ownedIngredients = new String[commas];
+    	//	String[] ownedIngredients = new String[commas];
     	//	INGREDIENTSLIST = ownedIngredients()[];
     		for (int j = 0; j < commas; j++)
     		{
@@ -82,7 +84,7 @@ public class MainActivity extends Activity {
     }
     	
     	
-    public String matchIngredients(String input)
+    public String matchIngredients(String[] input)
     {
    // 	String end = "No match";
     	
@@ -101,28 +103,28 @@ public class MainActivity extends Activity {
     		{
     			String item = wholeRecipe.substring(0, wholeRecipe.indexOf(", "));
     			
-    			/*
-    			for (k=0, k<=NUMBER OF INGREDIENTS INPUTED; k++) 
+    			
+    			for (int k=0; k<= 3; k++) 
     			{
-    				if (item.equals(ownedIngredients[k])
+    				if (item.equals(ownedIngredients[k]))
     				{
     					commonIngredients++;
     				}
     			}
-    			if (commonIngredients / NUMBER OF INGREDIENTS >= .75)
+    			if (commonIngredients / 3 >= .75)
     			{
     				end = getRecipes()[i];
     				System.out.println(end.substring(0, end.length()-1));
     			}
     			wholeRecipe = wholeRecipe.substring(wholeRecipe.indexOf(", ") + 2);
-    			*/
+    			
     			 
-    			if (item.equals(ingredient))
+    /*			if (item.equals(ingredient))
     			{
     				end = getRecipes()[i];
     				System.out.println(end.substring(0, end.length()-1));
     			}
-    			wholeRecipe = wholeRecipe.substring(wholeRecipe.indexOf(", ") + 2);
+    			wholeRecipe = wholeRecipe.substring(wholeRecipe.indexOf(", ") + 2); */
     		}
     	}
     	return end;

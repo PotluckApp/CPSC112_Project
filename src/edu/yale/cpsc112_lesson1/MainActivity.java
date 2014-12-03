@@ -17,13 +17,7 @@ import java.io.IOException;
 
 public class MainActivity extends Activity {
 	
-	
-//	public static String INGREDIENTSLIST = "";
-	public static int commonIngredients;
-	public static int index;
 	public static String end = "No matches!";
-//	public static int commas = 0;
-//	public static String[]ownedIngredients = new String[commas];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +38,12 @@ public class MainActivity extends Activity {
         			INGREDIENTSLIST = v.getText().toString();
         			v.setText("");
         			end = "No matches!";
-        			matchIngredients(listOfOwnedIngredients(INGREDIENTSLIST));
-        	//		System.out.println(INGREDIENTSLIST);
-        	//		System.out.println(listOfOwnedIngredients(INGREDIENTSLIST)[0]);
-        	//		if (end.equals("No matches!"))
-        	//		{
-        				System.out.println(end);
-        	//		}
+        			System.out.println("You entered: " + INGREDIENTSLIST);
+        			matchIngredients(listOfOwnedIngredients(INGREDIENTSLIST + ", "));
+        			if (end.equals("No matches!"))
+        			{
+        				System.out.println("     " + end);
+        			}
         			handled = true;
         		}
         		return handled;
@@ -61,8 +54,9 @@ public class MainActivity extends Activity {
     public String[] getRecipes()
     {
     	Resources res = getResources();
-    	String[] recipes = res.getStringArray(R.array.recipes);
-    	return recipes; 
+    	String[] myRecipes = res.getStringArray(R.array.recipes);
+    	
+    	return myRecipes;
     }
     
     
@@ -86,82 +80,40 @@ public class MainActivity extends Activity {
     		return ownedIngredients;
     }
     
-    public String matchIngredients(String[] input)
+    public void matchIngredients(String[] input)
     {
-   // 	String end = "No match";
-    	
-    	//NEED TO REPLACE 3 WITH NUMBER OF RECIPES IN ARRAY*****
-    		
-    /*	for (int i=0; i<=3; i++)
+    	for (int i = 0; i < 4; i++)
     	{
     		String wholeRecipe = getRecipes()[i];
     		int commas = 0;
-    		for (int n = 0; wholeRecipe.indexOf(", ") != -1; n++)
+    		int commonIngredients = 0;
+    		for (int n = 0; n < wholeRecipe.length(); n++)
     		{
-    			commas++;
-    			wholeRecipe = wholeRecipe.substring(wholeRecipe.indexOf(", ") + 2);
-    		}
-    		wholeRecipe = getRecipes()[i]; */
-    	for (int n = 0; n < 4; n++)
-    	{
-    		String[] storedRecipe = listOfOwnedIngredients(getRecipes()[n]);
-    		if (storedRecipe.length < input.length)
-    		{
-    			for (int k = 0; k < storedRecipe.length - 1; k++)
+    			if (wholeRecipe.charAt(n) == ',')
     			{
-    				if (storedRecipe[k].equals(input[k]))
-    						{
-    					commonIngredients++;
-    						}
-    				if (commonIngredients / storedRecipe.length >= 0.5)
-    				{
-    					end = storedRecipe[storedRecipe.length - 1];
-    				}
+    				commas++;
     			}
     		}
-    		else
+    		for (int j = 0; j < commas; j++)
     		{
-    			for (int k = 0; k < input.length - 1; k++)
-    			{
-    				if (storedRecipe[k].equals(input[k]))
-    						{
-    					commonIngredients++;
-    						} 
-    				if (commonIngredients / storedRecipe.length >= 0.5)
-    				{
-    					end = storedRecipe[storedRecipe.length - 1];
-    				}
-    			}
-    		}
-    	}
-    	
-    /*	for (int j = 0; j < commas; j++)
-    		{
-    			String item = wholeRecipe.substring(0, wholeRecipe.indexOf(", "));
-    			
-    			
-    			for (int k=0; k<= 3; k++) 
+    			String item = wholeRecipe.substring(0, wholeRecipe.indexOf(","));
+    			for (int k = 0; k < input.length; k++) 
     			{
     				if (item.equals(input[k]))
     				{
     					commonIngredients++;
     				}
     			}
-    			if (commonIngredients / 3 >= .75)
-    			{
-    				end = getRecipes()[i];
-    				System.out.println(end.substring(0, end.length()-1));
-    			}
-    			wholeRecipe = wholeRecipe.substring(wholeRecipe.indexOf(", ") + 2);
-    			
-    			 
-    /*			if (item.equals(ingredient))
-    			{
-    				end = getRecipes()[i];
-    				System.out.println(end.substring(0, end.length()-1));
-    			}
-    			wholeRecipe = wholeRecipe.substring(wholeRecipe.indexOf(", ") + 2); */
-    	return end;
+    			wholeRecipe = wholeRecipe.substring(wholeRecipe.indexOf(",") + 2);
+    		}
+    		if (commonIngredients >= commas - 1 - commonIngredients)
+			{
+				end = getRecipes()[i];
+				System.out.println("     You can make: " + end.substring(0, end.indexOf(",")));
+				System.out.println("     Ingredients: " + end.substring(end.indexOf(",") + 1, end.length() - 3));
+				System.out.println("");
+			} 				
+    	}
     }
 
 

@@ -7,10 +7,10 @@
     <string name="welcome">Welcome to Potluck!</string>
     
     <string-array name="recipes">
-        <item name="Pesto Pasta">flour, egg, salt, basil, oil, nuts, cheese, Pesto Pasta, </item>
-        <item name="Pizza">flour, egg, yeast, tomato, cheese, Pizza, </item>
-        <item name="Chicken Quesadilla">tortilla, cheese, chicken, Chicken Quesadilla, </item>
-        <item name="Eggplant Parmagiana">eggplant, tomato, garlic, bread, cheese, Eggplant Parm, </item>
+        <item name="Pesto Pasta">Pesto Pasta, flour, egg, salt, basil, oil, nuts, cheese, .</item>
+        <item name="Pizza">Pizza, flour, egg, yeast, tomato, cheese, .</item>
+        <item name="Chicken Quesadilla">Chicken Quesadilla, tortilla, cheese, chicken, .</item>
+        <item name="Eggplant Parmagiana">Eggplant Parmagiana, eggplant, tomato, garlic, bread, cheese, .</item>
     </string-array>
 
 </resources>

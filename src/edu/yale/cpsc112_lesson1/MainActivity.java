@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
 //	public static String INGREDIENTSLIST = "";
 	public static int commonIngredients;
 	public static int index;
-	public static String end = "No matches!";
+	public static String[] end = {"No matches!"};
 //	public static int commas = 0;
 //	public static String[]ownedIngredients = new String[commas];
 
@@ -85,14 +85,14 @@ public class MainActivity extends Activity {
     		}
     		return ownedIngredients;
     }
-    	
-    	
-    public String matchIngredients(String[] input)
+    
+    public String[] matchIngredients(String[] input)
     {
    // 	String end = "No match";
     	
     	//NEED TO REPLACE 3 WITH NUMBER OF RECIPES IN ARRAY*****
-    	for (int i=0; i<=3; i++)
+    		
+    /*	for (int i=0; i<=3; i++)
     	{
     		String wholeRecipe = getRecipes()[i];
     		int commas = 0;
@@ -101,8 +101,41 @@ public class MainActivity extends Activity {
     			commas++;
     			wholeRecipe = wholeRecipe.substring(wholeRecipe.indexOf(", ") + 2);
     		}
-    		wholeRecipe = getRecipes()[i];
-    		for (int j = 0; j < commas; j++)
+    		wholeRecipe = getRecipes()[i]; */
+    	for (int n = 0; n < 4; n++)
+    	{
+    		String[] storedRecipe = listOfOwnedIngredients(getRecipes()[n]);
+    		if (storedRecipe.length < input.length)
+    		{
+    			for (int k = 0; k < storedRecipe.length; k++)
+    			{
+    				if (storedRecipe[k].equals(input[k]))
+    						{
+    					commonIngredients++;
+    						}
+    				if (commonIngredients / storedRecipe.length >= 0.5)
+    				{
+    					end = storedRecipe;
+    				}
+    			}
+    		}
+    		else
+    		{
+    			for (int k = 0; k < input.length; k++)
+    			{
+    				if (storedRecipe[k].equals(input[k]))
+    						{
+    					commonIngredients++;
+    						} 
+    				if (commonIngredients / storedRecipe.length >= 0.5)
+    				{
+    					end = storedRecipe;
+    				}
+    			}
+    		}
+    	}
+    	
+    /*	for (int j = 0; j < commas; j++)
     		{
     			String item = wholeRecipe.substring(0, wholeRecipe.indexOf(", "));
     			
@@ -128,8 +161,6 @@ public class MainActivity extends Activity {
     				System.out.println(end.substring(0, end.length()-1));
     			}
     			wholeRecipe = wholeRecipe.substring(wholeRecipe.indexOf(", ") + 2); */
-    		}
-    	}
     	return end;
     }
 

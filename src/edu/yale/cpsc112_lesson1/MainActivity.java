@@ -18,7 +18,7 @@ import java.io.IOException;
 public class MainActivity extends Activity {
 	
 	
-	public static String ingredient = "";
+	public static String INGREDIENTSLIST = "";
 	public static int commonIngredients;
 	public static int index;
 	public static String end = "No matches!";
@@ -38,12 +38,10 @@ public class MainActivity extends Activity {
         		boolean handled = false;
         		if (actionId == EditorInfo.IME_ACTION_DONE)
         		{
-        			ingredient = v.getText().toString();
+        			INGREDIENTSLIST = v.getText().toString();
         			v.setText("");
         			end = "No matches!";
-        		//	System.out.println(ingredient); //just to check if it worked
-        			matchIngredients(ingredient);
-        		//	matchIngredients(ingredient);
+        			matchIngredients(INGREDIENTSLIST);
         			if (end.equals("No matches!"))
         			{
         				System.out.println(end);
@@ -62,25 +60,27 @@ public class MainActivity extends Activity {
     	return recipes; 
     }
     
-    /*
+    
     public String[] listOfOwnedIngredients(String INGREDIENTSLIST)
     {
-    		String INGREDIENTSLIST = ownedIngredients()[];
+    //		INGREDIENTSLIST = ownedIngredients()[];
     		int commas = 0;
     		for (int n = 0; INGREDIENTSLIST.indexOf(", ") != -1; n++)
     		{
     			commas++;
     			INGREDIENTSLIST = INGREDIENTSLIST.substring(INGREDIENTSLIST.indexOf(", ") + 2);
     		}
-    		INGREDIENTSLIST = ownedIngredients()[];
+    		String[] ownedIngredients = new String[commas];
+    	//	INGREDIENTSLIST = ownedIngredients()[];
     		for (int j = 0; j < commas; j++)
     		{
     			String item = INGREDIENTSLIST.substring(0, INGREDIENTSLIST.indexOf(", "));
-    			ownedIngredients[j] = new String item  			 
+    			ownedIngredients[j] = item; 
+    			INGREDIENTSLIST = INGREDIENTSLIST.substring(INGREDIENTSLIST.indexOf(", ") + 2);
     		}
-    		INGREDIENTSLIST = INGREDIENTSLIST.substring(INGREDIENTSLIST.indexOf(", ") + 2);
+    		return ownedIngredients;
     }
-    	*/
+    	
     	
     public String matchIngredients(String input)
     {

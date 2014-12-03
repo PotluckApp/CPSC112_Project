@@ -23,7 +23,7 @@
         android:layout_marginBottom="46dp"
         android:layout_marginLeft="15dp"
         android:ems="10" 
-        android:hint="Enter an ingredient"
+        android:hint="Enter your ingredients"
         android:imeOptions="actionDone"
         android:inputType="textAutoCorrect">
 

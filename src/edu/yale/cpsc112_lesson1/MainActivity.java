@@ -14,10 +14,12 @@ import android.widget.TextView.OnEditorActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Random;
 
 public class MainActivity extends Activity {
 	
 	public static String end = "No matches!";
+	public static Random r = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,7 @@ public class MainActivity extends Activity {
         			if (end.equals("No matches!"))
         			{
         				System.out.println("     " + end);
+        				System.out.println("");
         			}
         			handled = true;
         		}
@@ -111,6 +114,27 @@ public class MainActivity extends Activity {
 				end = getRecipes()[i];
 				System.out.println("     You can make: " + end.substring(0, end.indexOf(",")));
 				System.out.println("     Ingredients: " + end.substring(end.indexOf(",") + 1, end.length() - 3));
+				int A = r.nextInt(5) + 1;
+				if (A == 1)
+				{
+					System.out.println("     Bon appetit!");
+				}
+				if (A == 2)
+				{
+					System.out.println("     Guten appetit!");
+				}
+				if (A == 3)
+				{
+					System.out.println("     Buon appetito!");
+				}
+				if (A == 4)
+				{
+					System.out.println("     Buen provecho!");
+				}
+				if (A == 5)
+				{
+					System.out.println("     Enjoy your meal!");
+				}
 				System.out.println("");
 			} 				
     	}

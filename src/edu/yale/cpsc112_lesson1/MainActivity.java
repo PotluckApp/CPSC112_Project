@@ -47,10 +47,10 @@ public class MainActivity extends Activity {
         			matchIngredients(listOfOwnedIngredients(INGREDIENTSLIST));
         	//		System.out.println(INGREDIENTSLIST);
         	//		System.out.println(listOfOwnedIngredients(INGREDIENTSLIST)[0]);
-        			if (end.equals("No matches!"))
-        			{
+        	//		if (end.equals("No matches!"))
+        	//		{
         				System.out.println(end);
-        			}
+        	//		}
         			handled = true;
         		}
         		return handled;

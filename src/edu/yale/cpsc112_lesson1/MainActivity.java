@@ -67,18 +67,20 @@ public class MainActivity extends Activity {
     {
     //		INGREDIENTSLIST = ownedIngredients()[];
     	//	int commas = 0;
-    		for (int n = 0; INGREDIENTSLIST.indexOf(", ") != -1; n++)
+    		String temporaryList1 = INGREDIENTSLIST;
+    		for (int n = 0; temporaryList1.indexOf(", ") != -1; n++)
     		{
     			commas++;
-    			INGREDIENTSLIST = INGREDIENTSLIST.substring(INGREDIENTSLIST.indexOf(", ") + 2);
+    			temporaryList1 = temporaryList1.substring(temporaryList1.indexOf(", ") + 1);
     		}
     	//	String[] ownedIngredients = new String[commas];
     	//	INGREDIENTSLIST = ownedIngredients()[];
+    		String temporaryList2 = INGREDIENTSLIST;
     		for (int j = 0; j < commas; j++)
     		{
-    			String item = INGREDIENTSLIST.substring(0, INGREDIENTSLIST.indexOf(", "));
-    			ownedIngredients[j] = item; 
-    			INGREDIENTSLIST = INGREDIENTSLIST.substring(INGREDIENTSLIST.indexOf(", ") + 2);
+    			String item = temporaryList2.substring(0, temporaryList2.indexOf(", "));
+    			ownedIngredients[j] = item;
+    			temporaryList2 = temporaryList2.substring(temporaryList2.indexOf(", ") + 2);
     		}
     		return ownedIngredients;
     }

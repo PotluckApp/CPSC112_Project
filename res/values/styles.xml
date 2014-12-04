@@ -16,5 +16,19 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <color name = "lightyellow">#F0F2C6</color>
+    <color name = "darkeryellow">#EFF48D</color>
+  
+    <style name = "NikitaTheme" parent = "android:Theme.Holo.Light">
+        <item name = "android:windowBackground">@color/lightyellow</item>
+        <item name = "android:colorBackground">@color/lightyellow</item>
+        <item name = "android:actionBarStyle">@style/NikitaTitleBar</item>
+    </style>
+    
+    <style name = "NikitaTitleBar" parent = "android:style/Widget.Holo.Light.ActionBar">
+        <item name = "android:colorBackground">@color/darkeryellow</item>
+        <item name = "android:background">@color/darkeryellow</item>
+    </style>
 
 </resources>

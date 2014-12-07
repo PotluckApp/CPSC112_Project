@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView out = (TextView) findViewById(R.id.textOut);
+        TextView out = (TextView) findViewById(R.id.textOut); //allow users to input text
         out.setMovementMethod(new ScrollingMovementMethod());
         System.setOut(new TextViewPrintStream(this, out));
         EditText editText = (EditText) findViewById(R.id.textIn);
@@ -37,12 +37,12 @@ public class MainActivity extends Activity {
         		if (actionId == EditorInfo.IME_ACTION_DONE)
         		{
         			String INGREDIENTSLIST = new String("");
-        			INGREDIENTSLIST = v.getText().toString();
+        			INGREDIENTSLIST = v.getText().toString(); //saves user-entered text as INGREDIENTSLIST
         			v.setText("");
         			end = "No matches!";
-        			System.out.println("You entered: " + INGREDIENTSLIST);
-        			matchIngredients(listOfOwnedIngredients(INGREDIENTSLIST + ", "));
-        			if (end.equals("No matches!"))
+        			System.out.println("You entered: " + INGREDIENTSLIST); //remind the user what they entered
+        			matchIngredients(listOfOwnedIngredients(INGREDIENTSLIST + ", ")); //match ingredients with recipes and print if there is a match
+        			if (end.equals("No matches!")) //let the user know that it didn't match a recipe
         			{
         				System.out.println("     " + end);
         				System.out.println("");
@@ -54,7 +54,7 @@ public class MainActivity extends Activity {
         });  
     }
 
-    public String[] getRecipes()
+    public String[] getRecipes() //read recipes off strings.xml, where they are stored
     {
     	Resources res = getResources();
     	String[] myRecipes = res.getStringArray(R.array.recipes);
@@ -63,7 +63,7 @@ public class MainActivity extends Activity {
     }
     
     
-    public String[] listOfOwnedIngredients(String input)
+    public String[] listOfOwnedIngredients(String input) //parse the user's entry into an array of single ingredients
     {
     		int commas = 0;
     		for (int n = 0; n < input.length(); n++)
@@ -83,14 +83,14 @@ public class MainActivity extends Activity {
     		return ownedIngredients;
     }
     
-    public void matchIngredients(String[] input)
+    public void matchIngredients(String[] input) //match user-owned ingredients with those in the recipes
     {
-    	for (int i = 0; i < 4; i++)
+    	for (int i = 0; i < 4; i++) //cycle through all recipes
     	{
     		String wholeRecipe = getRecipes()[i];
     		int commas = 0;
     		int commonIngredients = 0;
-    		for (int n = 0; n < wholeRecipe.length(); n++)
+    		for (int n = 0; n < wholeRecipe.length(); n++) //parse out each recipe into a series of ingredients
     		{
     			if (wholeRecipe.charAt(n) == ',')
     			{
@@ -100,16 +100,16 @@ public class MainActivity extends Activity {
     		for (int j = 0; j < commas; j++)
     		{
     			String item = wholeRecipe.substring(0, wholeRecipe.indexOf(","));
-    			for (int k = 0; k < input.length; k++) 
+    			for (int k = 0; k < input.length; k++) //check if any of the user's ingredients are used in the recipe
     			{
-    				if (item.equals(input[k]))
+    				if (item.equals(input[k])) 
     				{
     					commonIngredients++;
     				}
     			}
     			wholeRecipe = wholeRecipe.substring(wholeRecipe.indexOf(",") + 2);
     		}
-    		if (commonIngredients >= commas - 1 - commonIngredients)
+    		if (commonIngredients >= commas - 1 - commonIngredients) //randomly choose an "enjoy!" message for the user
 			{
 				end = getRecipes()[i];
 				System.out.println("     You can make: " + end.substring(0, end.indexOf(",")));

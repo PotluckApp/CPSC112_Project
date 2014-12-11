@@ -6,7 +6,8 @@ import java.io.BufferedReader;
 
 public class Logic {
 
-	private static String path="C:/CPSC112_Project:/ListOfRecipes.txt";
+	//private static String path="C:/CPSC112_Project:/ListOfRecipes.txt";
+	//this is wrong find this out!
 
 	public static void main(String[] args) {
 		

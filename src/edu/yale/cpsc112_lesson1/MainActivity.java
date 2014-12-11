@@ -85,7 +85,7 @@ public class MainActivity extends Activity {
     
     public void matchIngredients(String[] input) //match user-owned ingredients with those in the recipes
     {
-    	for (int i = 0; i < 4; i++) //cycle through all recipes
+    	for (int i = 0; i < 14; i++) //cycle through all recipes
     	{
     		String wholeRecipe = getRecipes()[i];
     		int commas = 0;
